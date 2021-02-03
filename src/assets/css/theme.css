@@ -1,0 +1,27 @@
+.bg-primary{
+    background-color: var(--primaryColor);
+    color: var(--primaryColorContrast);
+}
+.text-primary{
+    color:  var(--primaryColor) !important;
+}
+.bg-secondary{
+    background-color: var(--secondaryColor);
+    color: var(--secondaryColorContrast);
+}
+.text-secondary{
+    color: var(--secondaryColor) !important;
+}
+.bg-tertiary{
+    background-color: var(--tertiaryColor);
+    color: var(--tertiaryColorContrast);
+}
+.text-tertiary{
+    color:  var(--tertiaryColor) !important;
+}
+
+.carousel-dot.is-active{
+    background-color: var(--primaryColor);
+}
+
+
