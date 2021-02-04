@@ -53,10 +53,12 @@ export default {
     },
     methods: {
         login(){
-            console.log('login!');
+            this.$store.dispatch('login');
+            this.$router.push('/');
         },
         register(){
-            console.log('register!');
+            this.$store.dispatch('login');
+            this.$router.push('/');
         }
     }
 }

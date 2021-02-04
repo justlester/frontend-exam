@@ -1,18 +1,23 @@
 <template>
     <div class="l-container">
+      <div class="section-title-row">
         <h1 class="section-title">NEWS</h1>
-        <div class="post-grid">
-          <div v-for="n in 6" :key="n" class="post-grid-item">
-            <Post/>
+        <router-link v-if="isLoggedIn" class="btn text text-underlined" to="/create-new-post">
+          Create New Post
+        </router-link> 
+      </div>
+      <div class="post-grid">
+        <div v-for="n in posts" :key="n" class="post-grid-item">
+          <Post/>
+        </div>
+      </div>
+      <div class="post-grid justify-center">
+          <div class="post-grid-item">
+            <a @click.prevent="loadMore" href="#" class="btn block">
+              LOAD MORE
+            </a>
           </div>
-        </div>
-        <div class="post-grid justify-center">
-            <div class="post-grid-item">
-              <a href="#" class="btn block">
-                LOAD MORE
-              </a>
-            </div>
-        </div>
+      </div>
     </div>
 </template>
 
@@ -24,5 +29,18 @@ export default {
   components: {
     Post
   },
+  data(){
+    return {
+      posts: 6
+    }
+  },
+  computed: {
+        isLoggedIn: function(){ return this.$store.getters.isLoggedIn },
+  },
+  methods: {
+    loadMore(){
+      this.posts = this.posts + 6;
+    }
+  }
 }
 </script>

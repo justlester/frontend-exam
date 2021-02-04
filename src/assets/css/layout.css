@@ -2,6 +2,13 @@
 .l-footer{
     width: 100%;
 }
+.l-header.fixed{
+    position: fixed;
+    z-index: 9999;
+}
+.l-header.fixed + main{
+    padding-top: 75px;
+}
 
 .l-header .l-inner-header{
     display: flex;

@@ -1,3 +1,12 @@
+.is-disable-scroll{
+  overflow: hidden !important;
+}
+
+.dialog-overlay.is-show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .carousel-dot.is-active{
     background-color: var(--primaryColor);
     border-color: var(--primaryColor);

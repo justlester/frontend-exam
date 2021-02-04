@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :fixed="isFixed"/>
     <main>
       <router-view/>
     </main>
@@ -16,6 +16,11 @@ export default {
   components: {
     Header,
     Footer
+  },
+  computed: {
+    isFixed(){
+      return this.$route.name == 'Login' ||  this.$route.name == 'Home' ;
+    }
   }
 }
 </script>
