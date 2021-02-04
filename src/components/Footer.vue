@@ -2,14 +2,16 @@
     <footer class="l-footer">
         <div class="bg-secondary">
             <div class="l-container l-footer-details">
-                <div class="footer-logo">
-                    <img src="../assets/svgs/blog-logo-white.svg"/>
+                <div class="l-footer-inner-details">
+                    <div class="footer-logo">
+                        <img src="../assets/svgs/blog-logo-white.svg"/>
+                    </div>
+                    <p>
+                        サンプルテキストサンプル ルテキストサンプルテキストサンプルテキスト<br/>
+                        サンプル ルテキスト
+                    </p>
                 </div>
-                <p>
-                    サンプルテキストサンプル ルテキストサンプルテキストサンプルテキスト<br/>
-                    サンプル ルテキスト
-                </p>
-                <a href="#" class="btn scroll">
+                <a @click.prevent="scrollToTop" href="#" class="btn scroll">
                     <i class="arrow up"></i>
                     TOP
                 </a>
@@ -25,6 +27,11 @@
 
 <script>
 export default {
-    name: 'Footer'
+    name: 'Footer',
+    methods: {
+        scrollToTop(){
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    }
 }
 </script>

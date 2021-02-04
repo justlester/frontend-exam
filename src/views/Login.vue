@@ -1,18 +1,18 @@
 <template>
   <div>
-      <Carousel />
+      <Auth />
       <PostGrid />
     </div>
 </template>
 
 <script>
-import Carousel from '@/components/Carousel.vue'
+import Auth from '@/components/Auth.vue'
 import PostGrid from '@/components/PostGrid.vue'
 
 export default {
-  name: 'Home',
+  name: 'Login',
   components: {
-    Carousel,
+    Auth,
     PostGrid
   },
 }

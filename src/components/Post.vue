@@ -1,13 +1,13 @@
 <template>
-    <div class="post">
+    <router-link to="/post-details" class="post">
         <img class="post-image" src="../assets/images/post.png" />
         <div>
-            <span class="post-date">2019.06.19</span>
-            <p class="post-title">
+            <h3 class="post-date">2019.06.19</h3>
+            <h2 class="post-title">
                 サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト
-            </p>
+            </h2>
         </div>
-    </div>
+    </router-link>
 </template>
 
 

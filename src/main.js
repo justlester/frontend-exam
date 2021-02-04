@@ -8,7 +8,6 @@ import './assets/css/module.css'
 import './assets/css/state.css'
 import './assets/css/theme.css'
 
-
 Vue.config.productionTip = false
 
 new Vue({
