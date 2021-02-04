@@ -77,6 +77,9 @@ export default {
             ],
             isPrevRunning: false,
             isNextRunning: false,
+
+            autoPlayStartDelay: null,
+            autoPlayInstance: null,
         }
     },
     computed: {
@@ -85,7 +88,32 @@ export default {
             return temp.length ? temp[0] : null;
         },
     },
+    mounted(){
+        this.autoPlay();
+    },
+    watch: {
+        isNextRunning: function(){
+            this.determineAutoPlay();
+        },
+        isPrevRunning: function(){
+            this.determineAutoPlay();
+        }
+    },
     methods: {
+        autoPlay(){
+            var that = this;
+            this.autoPlayInstance = setInterval(()=>{
+                that.next();
+            },10000);
+        },
+        determineAutoPlay(){
+            var that = this;
+            clearInterval(this.autoPlayInstance);
+            clearTimeout(this.autoPlayStartDelay);
+            this.autoPlayStartDelay = setTimeout(()=>{
+                that.autoPlay();
+            },3000);
+        },
         prev(){
             if(!this.isPrevRunning){
                 this.isPrevRunning= true;
